@@ -72,7 +72,8 @@ function! unite#sources#session#_save(filename, ...) "{{{
   " Append tab pages.
   for tabnr in range(1, tabpagenr('$'))
     if tabnr != 1
-      call add(append, 'tabnew')
+      "二つ以上タブがあると空タブを作るのでコメントにしている
+      "call add(append, 'tabnew')
     endif
     if v:version < 703
       continue
